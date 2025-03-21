@@ -92,7 +92,7 @@ public class Aerolinea {
 	}
 
 
-	public void setStatus(Long status) {
+	public void setStatus(Long estatus) {
 		this.estatus = estatus;
 	}
 

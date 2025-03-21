@@ -152,7 +152,7 @@ public class Aeropuerto {
 
 
 
-	public void setStatus(Long status) {
+	public void setStatus(Long idEstatus) {
 		this.idEstatus = idEstatus;
 	}
 

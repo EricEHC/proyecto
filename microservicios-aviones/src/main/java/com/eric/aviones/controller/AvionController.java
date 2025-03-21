@@ -34,8 +34,8 @@ public class AvionController extends CommonController<Avion, AvionService>{
 		}
 		
 		Avion avion = service.update(avionDTO, id);
-		if (avionDTO != null) {
-			return ResponseEntity.status(HttpStatus.CREATED).body(avion);
+		if (avion != null) {
+			return ResponseEntity.status(HttpStatus.CREATED).body(avionDTO);
 		}
 		return ResponseEntity.notFound().build();
 	}
