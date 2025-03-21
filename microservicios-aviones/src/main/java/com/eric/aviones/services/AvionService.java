@@ -8,6 +8,8 @@ public interface AvionService extends CommonService<Avion>{
 	
 	public Avion createAvionDTO(AvionDTO avionDTO);
 	
-	public Avion update(Avion avion, Long id);
+	public Avion update(AvionDTO avionDTO, Long id);
+
+	Avion update(Avion avion, Long id);
 
 }
