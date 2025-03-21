@@ -12,7 +12,6 @@ import jakarta.validation.constraints.Size;
 public class AvionDTO {
 	
 	private Long id;
-	
 	@NotNull(message = "El numero de registro es obligatorio")
 	@Min(value = 1000, message = "El numero de registro debe ser al menos 1000")
 	private Long numRegistro;
@@ -41,6 +40,70 @@ public class AvionDTO {
 	@NotNull(message = "El id de la Aerolinea no puede ser nulo")
 	@Min(value = 1, message = "El valor del id de la Aerolinea no puede ser menor a 1")
 	private Long idAerolinea;
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public Long getNumRegistro() {
+		return numRegistro;
+	}
+
+	public void setNumRegistro(Long numRegistro) {
+		this.numRegistro = numRegistro;
+	}
+
+	public String getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
+
+	public String getCodigoModelo() {
+		return codigoModelo;
+	}
+
+	public void setCodigoModelo(String codigoModelo) {
+		this.codigoModelo = codigoModelo;
+	}
+
+	public Long getCapacidad() {
+		return capacidad;
+	}
+
+	public void setCapacidad(Long capacidad) {
+		this.capacidad = capacidad;
+	}
+
+	public LocalDate getFechaPrimerVuelo() {
+		return fechaPrimerVuelo;
+	}
+
+	public void setFechaPrimerVuelo(LocalDate fechaPrimerVuelo) {
+		this.fechaPrimerVuelo = fechaPrimerVuelo;
+	}
+
+	public Long getEstatus() {
+		return estatus;
+	}
+
+	public void setEstatus(Long estatus) {
+		this.estatus = estatus;
+	}
+
+	public Long getIdAerolinea() {
+		return idAerolinea;
+	}
+
+	public void setIdAerolinea(Long idAerolinea) {
+		this.idAerolinea = idAerolinea;
+	}
 	
 	
 

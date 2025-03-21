@@ -18,12 +18,12 @@ import jakarta.validation.Valid;
 @RestController
 public class AvionController extends CommonController<Avion, AvionService>{
 	@PutMapping("/avion-dto")
-	public ResponseEntity<?> create(@Valid @RequestBody AvionDTO avionDto, BindingResult result){
+	public ResponseEntity<?> create(@Valid @RequestBody AvionDTO avionDTO, BindingResult result){
 		//return ResponseEntity.status(HttpStatus.CREATED).body(avionDto)
 		if (result.hasErrors()) {
 			return this.validar(result);  
 		}
-		return ResponseEntity.status(HttpStatus.CREATED).body(service.createAvionDTO(avionDto));
+		return ResponseEntity.status(HttpStatus.CREATED).body(service.createAvionDTO(avionDTO));
 	}
 	
 	@PutMapping("/{id}")

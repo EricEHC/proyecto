@@ -54,7 +54,7 @@ public class Avion {
 	@Column(name= "CAPACIDAD")
 	@NotNull(message = "LA capacidad es obligatoriao")
 	@Min(value = 0, message = "La capacidad debe de ser al menos 0")
-    private int capacidad;
+    private Long capacidad;
 	
 	@Column(name= "FECHA_PRIMER_VUELO")
 	@NotNull(message = "La fecha de primer vuelo es obligatoria")
@@ -143,7 +143,7 @@ public class Avion {
 
 
 
-	public int getCapacidad() {
+	public Long getCapacidad() {
 		return capacidad;
 	}
 
@@ -151,7 +151,7 @@ public class Avion {
 
 
 
-	public void setCapacidad(int capacidad) {
+	public void setCapacidad(Long capacidad) {
 		this.capacidad = capacidad;
 	}
 

@@ -31,13 +31,19 @@ public class AvionServiceImpl extends CommonServiceImpl<Avion, AvionRepository> 
 	
 	@Override
 	@Transactional
-	public Avion update(AvionDTO avionDTO, Long id) {
-		Optional<Avion> opt = repository.findById(id);
-		if (opt.isPresent()) {
-			Avion avion = mapper.dtoToEntity(avionDTO);
-			avion.setId(id);
-			return repository.save(avion);
-		}
+	public Avion update(Avion avion, Long id) {
+		Optional<Avion> optAvion=repository.findById(id);
+		if(optAvion.isPresent()) {
+			Avion avionDb=optAvion.get();
+			avionDb.setTipo(avion.getTipo());
+			avionDb.setStatus(avion.getStatus());
+			avionDb.setNumeroRegistro(avion.getNumeroRegistro());
+			avionDb.setFechaPrimerVuelo(avion.getFechaPrimerVuelo());
+			avionDb.setCodigoModelo(avion.getCodigoModelo());
+			avionDb.setCapacidad(avion.getCapacidad());
+			avionDb.setAerolinea(avion.getAerolinea());			
+			return avionDb;
+	}
 		return null;
 	}
 

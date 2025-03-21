@@ -10,6 +10,8 @@ import com.eric.aviones.dto.AvionDTO;
 import com.eric.commons.entities.models.Aerolinea;
 import com.eric.commons.entities.models.Avion;
 
+
+
 @Component
 public class AvionMapper {
 	
@@ -23,12 +25,12 @@ public class AvionMapper {
 		}
 		AvionDTO avionDTO = new AvionDTO();
 		avionDTO.setId(avion.getId());
-		avionDTO.setNumeroRegistro(avion.getNumeroRegistro());
+		avionDTO.setNumRegistro(avion.getNumeroRegistro());
 		avionDTO.setTipo(avion.getTipo());
 		avionDTO.setCodigoModelo(avion.getCodigoModelo());
 		avionDTO.setCapacidad(avion.getCapacidad());
 		avionDTO.setFechaPrimerVuelo(avion.getFechaPrimerVuelo());
-		avionDTO.setStatus(avion.getStatus());
+		avionDTO.setEstatus(avion.getStatus());
 		avionDTO.setIdAerolinea(avion.getAerolinea() != null? avion.getAerolinea().getId() : null);
 		
 		return avionDTO;
@@ -42,13 +44,14 @@ public class AvionMapper {
 		}
 		Avion avion = new Avion();
 		avion.setId(avionDTO.getId());
-		avion.setNumeroRegistro(avionDTO.getNumeroRegistro());
+		avion.setNumeroRegistro(avionDTO.getNumRegistro());
 		avion.setTipo(avionDTO.getTipo());
 		avion.setCodigoModelo(avionDTO.getCodigoModelo());
 		avion.setCapacidad(avionDTO.getCapacidad());
 		avion.setFechaPrimerVuelo(avionDTO.getFechaPrimerVuelo());
-		avion.setStatus(avionDTO.getStatus());
-		Optional<Aerolinea> aerolinea = aerolineaClient.getAerolineaById(avionDTO.getIdAerolinea());
+		avion.setStatus(avionDTO.getEstatus());
+		
+		Optional<Aerolinea> aerolinea = aerolineaClient.getAerolineaById(avionDTO.getId());
 		avion.setAerolinea(aerolinea.isPresent()? aerolinea.get() : null);
 		return avion;
 		
